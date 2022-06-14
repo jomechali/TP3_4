@@ -18,5 +18,10 @@ public abstract class Intervenant {
 
 
 	public abstract double getSalaire();
+	public abstract String getStatus();
+	
+	public void afficherDonnees() {
+		System.out.printf("le %s nommé %s %s gagne %.1f euros ce mois ci\n", this.getStatus(), this.firstName, this.lastName, this.getSalaire());
+	}
 
 }

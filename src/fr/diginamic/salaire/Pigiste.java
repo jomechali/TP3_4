@@ -29,6 +29,11 @@ public class Pigiste extends Intervenant {
 		return dailyPay * workedDays;
 	}
 
+	@Override
+	public String getStatus() {
+		return "pigiste";
+	}
+
 	/**
 	 * @return the workedDays
 	 */

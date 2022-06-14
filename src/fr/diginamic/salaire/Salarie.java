@@ -26,6 +26,11 @@ public class Salarie extends Intervenant {
 		return monthlyWage;
 	}
 
+	@Override
+	public String getStatus() {
+		return "salarié";
+	}
+
 	/**
 	 * @return the monthlyWage
 	 */

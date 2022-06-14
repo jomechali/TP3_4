@@ -9,9 +9,11 @@ public class TestIntervenant {
 
 		Salarie salarie1 = new Salarie("toto", "tototo", 1500);
 		System.out.println("salaire du salarié : " +salarie1.getSalaire());
-
+		salarie1.afficherDonnees();
+		
 		Pigiste pigiste1 = new Pigiste("titi", "tititi", 5, 50);
 		System.out.println("salaire du pigiste : " + pigiste1.getSalaire());
+		pigiste1.afficherDonnees();
 	}
 
 }
