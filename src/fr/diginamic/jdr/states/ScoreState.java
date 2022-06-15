@@ -19,6 +19,7 @@ public class ScoreState extends State {
 	@Override
 	public String textToDisplay() {
 		String toDisplay = "This character earned " + arena.getCharacterScore() + " score points.";
+		toDisplay += String.format("\n(Strenght : %d; LifePoints : %d)", arena.getCharacterStrenght(), arena.getCharacterLifePoints());
 		if (leave) {
 			toDisplay += "\nSee you soon!";
 		} else {

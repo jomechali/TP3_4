@@ -9,50 +9,30 @@ public class FightState extends State {
 	
 	public FightState(State previouState) {
 		super(previouState);
+		// conception mistake!!! the first turn is here???
+		this.Update(null);
 	}
 
 	@Override
 	public void Update(String input) {
-
-		//TODO to remove when begin state will be implemented
-		if (turnNumber == 0) {
-			arena.randomNewFoe();
-			System.out.println("The character meet a " + arena.monsterName() + " !");
-		}
-		
-		turnNumber++;
-		currentFightTurn = arena.fightTurn();
 		
 		if (arena.fightHasEnded()) {
-			// change to FightEndState
-
-			if (arena.isCharacterReady()) {
-				arena.increaseScore(currentFightTurn.getLoserScore());
-			} else {
-				System.out.println("your character died!");
-			}
-			super.changeState(new MainMenu(this));
+			super.changeState(new FightStateEnd(this, currentFightTurn, turnNumber));
+			return;
 		}
+		turnNumber++;
+		currentFightTurn = arena.fightTurn();
 	}
 
 	@Override
 	public String textToDisplay() {
-
-
-		//TODO to remove when begin state will be implemented
-		if (turnNumber == 0) {
-			return "The character meet a new monster !";
-		} else {
-			String toDisplayString = "The turn " + turnNumber + " begin! ";
-			toDisplayString += currentFightTurn.getWinnerName() + " won!\n\tAttack : " + currentFightTurn.getWinnerAttack() + "Life points remaining : " + currentFightTurn.getWinnerLifePoints() + "\n";
-			toDisplayString += currentFightTurn.getLoserName() + " lost!\n\tAttack : " + currentFightTurn.getLoserAttack() + "Life points remaining : " + currentFightTurn.getLoserLifePoints() + "\n";
-			
-			if (arena.fightHasEnded()) {
-				toDisplayString += currentFightTurn.getLoserName() + " died!";
-			}
+		String toDisplayString = "The turn " + turnNumber + " begin!\n";
+		toDisplayString += currentFightTurn.getWinnerName() + " won!\n\tAttack : " + currentFightTurn.getWinnerAttack() + "\t|Life points remaining : " + currentFightTurn.getWinnerLifePoints() + "\n";
+		toDisplayString += currentFightTurn.getLoserName() + " lost!\n\tAttack : " + currentFightTurn.getLoserAttack() + "\t|Life points remaining : " + currentFightTurn.getLoserLifePoints() + "\n";
 		
-			return toDisplayString;
-		}
+	
+		return toDisplayString;
+	
 	}
 
 }

@@ -24,7 +24,7 @@ public class Arena {
 	 */
 	public void initialize() {
 		characterScore = 0;
-		character = new Fighter(playerName, Engine.RANDOM_GENERATOR.nextInt(31) + 20, Engine.RANDOM_GENERATOR.nextInt(7) + 1, 0);
+		character = new Fighter(playerName, Engine.RANDOM_GENERATOR.nextInt(20, 51), Engine.RANDOM_GENERATOR.nextInt(12, 19), 0);
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class Arena {
 	 */
 	public void randomNewFoe() {
 		Random randomGenerator = Engine.RANDOM_GENERATOR;
-		int monsterType = randomGenerator.nextInt(3);
+		int monsterType = randomGenerator.nextInt(1, 4);
 		
 		switch (monsterType) {
 		case 1:
@@ -45,8 +45,10 @@ public class Arena {
 			break;
 		case 3:
 			this.newFoe("Troll", randomGenerator.nextInt(20, 31), randomGenerator.nextInt(10, 16), 5);
+			break;
 
 		default:
+			System.err.println("Something went really wrong!"); // this was surprisingly useful :(
 			break;
 		}
 	}
@@ -101,12 +103,29 @@ public class Arena {
 	public boolean isCharacterReady() {
 		return !Objects.isNull(character) && character.isAlive();
 	}
+	
+	public boolean isCharacterDead() {
+		return !character.isAlive();
+	}
 	/**
 	 * TODO temporary function to access the name of the monster 
 	 */
 	public String monsterName() {
 		return monster.getName();
 	}
+	/**
+	 * methode to access the strenght of the character
+	 */
+	public int getCharacterStrenght() {
+		return character.getStrenght();
+	}
+	/**
+	 * methode to access the life points of the character
+	 */
+	public int getCharacterLifePoints() {
+		return character.getLifePoints();
+	}
+	
 	
 	/**
 	 * Increase the score

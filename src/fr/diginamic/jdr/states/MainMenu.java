@@ -18,11 +18,10 @@ public class MainMenu extends State {
 			
 		case "2"://fight
 			//switch to fightState
-			//TODO Create a FightStateInit
 			if (!arena.isCharacterReady()) {
 				System.out.println("Initialize a new character");
 			} else {
-				super.changeState(new FightState(this));
+				super.changeState(new FightStateInit(this));
 			}
 			break;
 		case "3"://display score
@@ -45,7 +44,7 @@ public class MainMenu extends State {
 
 		String mainMenuText = arena.getPlayerName() + ", what to do next?:\n"
 							+ "\t1 - Create a new character\n"
-							+ "\t2 - Fight a monsterWIP\n"
+							+ "\t2 - Fight a monster\n"
 							+ "\t3 - Display character score\n"
 							+ "\t4 - Leave the game :(";
 		return mainMenuText;
