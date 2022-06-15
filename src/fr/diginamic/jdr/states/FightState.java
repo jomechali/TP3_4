@@ -2,6 +2,12 @@ package fr.diginamic.jdr.states;
 
 import fr.diginamic.jdr.FightTurnRecord;
 
+/**
+ * The actual fight takes place here, this state last until a fighter is beaten
+ * Link to the Fight End state
+ * @author Joseph
+ *
+ */
 public class FightState extends State {
 
 	private int turnNumber = 0;

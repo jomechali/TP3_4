@@ -3,6 +3,11 @@ package fr.diginamic.jdr.states;
 import fr.diginamic.jdr.Arena;
 import fr.diginamic.jdr.Engine;
 
+/**
+ * The initial state, the player is asked its name
+ * @author Joseph
+ *
+ */
 public class InitialState extends State {
 
 	

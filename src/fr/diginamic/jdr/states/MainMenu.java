@@ -1,5 +1,11 @@
 package fr.diginamic.jdr.states;
 
+/**
+ * The main state, use to create a character and leave the game
+ * Link to the Initial Fight state and to the Score state
+ * @author Joseph
+ *
+ */
 public class MainMenu extends State {
 
 
@@ -13,21 +19,24 @@ public class MainMenu extends State {
 
 		switch (input) {
 		case "1"://new character
-			arena.initialize();			
+			arena.initialize();	
+			System.out.println("Your journey begins!");//  this must disappear : for MVC, make another state
 			break;
 			
 		case "2"://fight
-			//switch to fightState
+			//switch to fightStateInit
 			if (!arena.isCharacterReady()) {
-				System.out.println("Initialize a new character");
+				System.out.println("Initialize a new character"); // this must disappear : for MVC, and makes little sense here, maybe a new state?
 			} else {
 				super.changeState(new FightStateInit(this));
 			}
 			break;
+			
 		case "3"://display score
-			//switch to scorestate
+			//switch to scoreState
 			super.changeState(new ScoreState(this, false));
 			break;
+			
 		case "4"://leave the main loop
 			this.leave = true;
 			break;

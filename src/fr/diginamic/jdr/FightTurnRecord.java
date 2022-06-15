@@ -1,5 +1,12 @@
 package fr.diginamic.jdr;
 
+/**
+ * This class stores all relevant data about a turn
+ * It is used by the fighting states to update the game, the winner, if the fight ended...
+ * It also filters the data for the view (formatted by the states)
+ * @author Joseph
+ *
+ */
 public class FightTurnRecord {
 	
 	private int winnerAttack;
@@ -23,6 +30,8 @@ public class FightTurnRecord {
 		this.loser = loser;
 	}
 
+	/*these methodes avoid the need for the states to know the Fighter class, just in case this code must change*/
+	
 	public String getWinnerName() {
 		return winner.getName();
 	}
@@ -42,14 +51,14 @@ public class FightTurnRecord {
 	}
 
 	/**
-	 * @return the winnerAttack
+	 * @return the winnerAttack for this turn
 	 */
 	public int getWinnerAttack() {
 		return winnerAttack;
 	}
 
 	/**
-	 * @return the loserAttack
+	 * @return the loserAttack for this turn
 	 */
 	public int getLoserAttack() {
 		return loserAttack;

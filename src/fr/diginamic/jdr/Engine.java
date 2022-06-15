@@ -33,8 +33,6 @@ public class Engine {
 			
 			//update game status
 			currentGameState.Update(playerInput);
-			
-			System.out.println(currentGameState.getClass());// TODO remove when finish
 		}
 
 		// set the leaving state
@@ -44,6 +42,7 @@ public class Engine {
 		return;
 		
 	}
+	
 	/**
 	 * @return the currentGameState
 	 */

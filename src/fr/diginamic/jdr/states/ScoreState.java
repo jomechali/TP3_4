@@ -1,7 +1,18 @@
 package fr.diginamic.jdr.states;
 
+/**
+ * A state to display the journey of the current character, and is also the last state of the game
+ * Link to the Main Menu state
+ * @author Joseph
+ *
+ */
 public class ScoreState extends State {
 
+	/**
+	 * This state can be the last state of the game, this is indicated by the boolean leave
+	 * @param previouState the previous state
+	 * @param leave	TRUE if the player asked to leave the game
+	 */
 	public ScoreState(State previouState, Boolean leave) {
 		super(previouState);
 		this.leave = leave;

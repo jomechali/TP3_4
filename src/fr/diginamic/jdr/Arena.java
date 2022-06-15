@@ -3,6 +3,14 @@ package fr.diginamic.jdr;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * This class deals with the creation of monsters and caracters (Fighter class)
+ * It contains the logic of the fight and produce records of the fight turns (FightTurnRecord class)
+ * It contains the data about the journey of the characters (the score)
+ * @author Joseph
+ *
+ */
+
 public class Arena {
 	
 	private String playerName;
@@ -20,7 +28,7 @@ public class Arena {
 	}
 
 	/**
-	 * Initialize a new character
+	 * Initialize a new character, according to the rules
 	 */
 	public void initialize() {
 		characterScore = 0;
@@ -28,7 +36,7 @@ public class Arena {
 	}
 	
 	/**
-	 * Initialize a random new foe
+	 * Initialize a random new foe, from the possible foes (this data could be externalized)
 	 */
 	public void randomNewFoe() {
 		Random randomGenerator = Engine.RANDOM_GENERATOR;
@@ -66,7 +74,7 @@ public class Arena {
 	
 	/**
 	 * Fight a turn according to the rules
-	 * @return the winner
+	 * @return the record of the turn
 	 */
 	public FightTurnRecord fightTurn() {
 		int playerAttack = character.attack();

@@ -1,10 +1,12 @@
 package fr.diginamic.jdr.states;
 
-import fr.diginamic.jdr.Arena;
-import fr.diginamic.jdr.Engine;
-
+/**
+ * A state to initialize the fight, with a message and the creation of a random foe
+ * Link to the Fight state
+ * @author Joseph
+ *
+ */
 public class FightStateInit extends State {
-
 
 	public FightStateInit(State previouState) {
 		super(previouState);

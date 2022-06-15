@@ -1,9 +1,13 @@
 package fr.diginamic.jdr.states;
 
-import fr.diginamic.jdr.Arena;
-import fr.diginamic.jdr.Engine;
 import fr.diginamic.jdr.FightTurnRecord;
 
+/**
+ * The last state of a fight, compute the results in the game
+ * Link to the Main Menu state
+ * @author Joseph
+ *
+ */
 public class FightStateEnd extends State {
 
 
